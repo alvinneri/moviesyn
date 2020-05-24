@@ -50,6 +50,10 @@ html , body{
   text-align: center;
 }
 
+.logo-link {
+  text-decoration: none;
+}
+
 .logo span {
   color: var(--light3);
 }
@@ -232,6 +236,27 @@ h2:hover{
   color: var(--light);
   
 }
+
+.search-container {
+  display: flex;
+  flex-wrap: wrap;
+  height: 80vh;
+  overflow-y: scroll;  
+}
+
+.search-container::-webkit-scrollbar {
+  width: .1em;
+}
+
+.search-container::-webkit-scrollbar-track{
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.search-container::-webkit-scrollbar-thumb {
+  background-color: var(--light3);
+  outline: 1px solid slategrey;
+}
+
 
 
 
