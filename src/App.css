@@ -85,12 +85,11 @@ html , body{
 .hero-container {
   position: relative;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
 }
 
-.options {
-  padding-left: 1em;
-}
+
 
 
 .options h2 {
@@ -219,7 +218,7 @@ h2:hover{
 .footer-container {
   background: #313131;
   color:var(--light2);
-  position:absolute;
+  position: fixed;
   bottom: 0%;
   left: 0%;
   width: 100%;
@@ -269,8 +268,11 @@ h2:hover{
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) { 
   /* Header */
+  .hero-container {
+    flex-direction: column;
+  }
 
-
+  
  }
 
 /* Medium devices (tablets, 768px and up) */
@@ -279,8 +281,6 @@ h2:hover{
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-end;
-
-    
   }
 
   .logo {
@@ -293,7 +293,18 @@ h2:hover{
  }
 
 /* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {  }
+@media (min-width: 992px) { 
+
+  .hero-container {
+    position: relative;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .options {
+    padding-left: 1em;
+  }
+ }
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {  }
