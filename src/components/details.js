@@ -3,10 +3,10 @@ import {Link} from 'react-router-dom';
 
 const Details = (props) => {
 
-    const {title,overview, vote_average, release_date, image} = props.location.state;
+    const {title,overview, vote_average, release_date, image,genre} = props.location.state;
     return (
         <div className="margin">
-            <Link to='/' className="btn-back">Go Back</Link>
+            <Link to={{pathname: '/' ,state: {genre} }} className="btn-back" >Go Back</Link>
             <div className="details-container">
                 <div className="details-img-container">
                     <img src={image} alt=""/>

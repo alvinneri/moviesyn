@@ -212,6 +212,27 @@ h2:hover{
   color: var(--light3);
 }
 
+.footer-container {
+  background: #313131;
+  color:var(--light2);
+  position:absolute;
+  bottom: 0%;
+  left: 0%;
+  width: 100%;
+}
+
+.footer-content-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-size: 0.8em;
+}
+
+.footer-content-container a {
+  color: var(--light);
+  
+}
+
 
 
 

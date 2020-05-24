@@ -1,58 +1,71 @@
 import React, { useState, useEffect } from 'react';
 import Movies from './movies';
-const Hero = () => {
+const Hero = (props) => {
 
+   
+    
     const api_key = '2fbdfd9c25ebd344b1730d4cfa7eef0e';
     const imageurl = 'https://image.tmdb.org/t/p/w500/'
     const [movie, setMovies] = useState([]);
+    const [genre, setGenre] = useState('popular');
     
     
     
     const getTopMovies = async () =>{
+        
+        if(genre =='popular'){
 
-
-        const response = await fetch(
+            const response = await fetch(
     
-            `https://api.themoviedb.org/3/movie/popular?api_key=${api_key}&language=en-US&page=1`
-        )
-    
-        const data = await response.json();
-        setMovies(data.results);
-       
-    };
+                `https://api.themoviedb.org/3/movie/popular?api_key=${api_key}&language=en-US`
+            )
+        
+            const data = await response.json();
+            setMovies(data.results);
 
-    const getMovies = async (e) => {
+        }else{
 
-        const genre = e.target.id;
-        let data = '';
-
-        if(genre!='popular'){
             const response = await fetch(
     
                 `https://api.themoviedb.org/3/search/movie?api_key=${api_key}&query=${genre}`
             )
-            data = await response.json();
-        }else {
-            
-            const response = await fetch(
-    
-                `https://api.themoviedb.org/3/movie/popular?api_key=${api_key}&language=en-US&page=1`
-            )
-            data = await response.json();
+            const data = await response.json();
+            setMovies(data.results);
         }
-      
-        
-        document.querySelector('.options .active').classList.remove('active');
-        document.querySelector(`#${genre}`).classList.add('active');
-        setMovies(data.results);
 
+        if(document.querySelector('.options .active')){
+            document.querySelector('.options .active').classList.remove('active');
+            document.querySelector(`#${genre}`).classList.add('active');
+        }
+       
+        
+       
+    };
+
+    const getMovies = async (e) => {
+        
+        const genre2 = e.target.id;
+        setGenre(genre2)
+        
     }
 
 
     useEffect(() =>{
-    getTopMovies();
+        if(props.location.state != null){
+           setGenre(props.location.state.genre);
+        }else{
+           setGenre('popular')        
+        }
+        
     
     },[]);
+
+    useEffect(()=> {
+        console.log(genre);
+        
+        getTopMovies();
+        
+    },[genre])
 
 
     
@@ -78,6 +91,7 @@ const Hero = () => {
                         vote_average={movies.vote_average} 
                         release_date={movies.release_date.substring(0,4)}
                         image ={imageurl + movies.poster_path}
+                        genre = {genre}
                     />
                     ))}
                 </div>

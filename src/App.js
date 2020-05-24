@@ -6,6 +6,7 @@ import Hero from './components/hero';
 import {BrowserRouter as Router, Route , Link , Switch} from 'react-router-dom';
 import Details from './components/details';
 import NotFound from './components/notFound';
+import Footer from './components/footer';
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
           <Route path="/details" component={Details} />
           <Route component={NotFound} />
         </Switch>
-        
+        <Footer />
       
       </div>
     </Router>
