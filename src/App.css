@@ -178,6 +178,40 @@ h2:hover{
   border: 1px solid var(--light3);
 }
 
+.details-container {
+  margin: 1em 0;
+  display: flex;
+  justify-content: space-between;
+  color: var(--light);
+  animation: details 1s;
+}
+
+@keyframes details {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.details-img-container{
+  width: 30%;
+}
+
+.details-img-container img {
+  width: 100%;
+  border: 5px solid var(--light3);
+}
+
+.details-content-container {
+  width: 60%;
+}
+
+.details-content-container span {
+  color: var(--light3);
+}
+
 
 
 

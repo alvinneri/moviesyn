@@ -12,10 +12,10 @@ const Details = (props) => {
                     <img src={image} alt=""/>
                 </div>
                 <div className="details-content-container">
-                    <p>Title: {title}</p>
-                    <p>Date Released: {release_date}</p>
-                    <p>Overview: {overview}</p>
-                    <p>Average Vote: {vote_average}</p>
+                    <p><span>Title:</span> {title}</p>
+                    <p><span>Date Released:</span> {release_date}</p>
+                    <p><span>Overview:</span> {overview}</p>
+                    <p><span>Average Vote:</span> {vote_average}</p>
                 </div>
             </div>
         </div>
