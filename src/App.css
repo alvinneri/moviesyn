@@ -22,7 +22,7 @@ html , body{
 }
 
 .margin {
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
   
 }
@@ -124,7 +124,7 @@ h2:hover{
 
 .movie-container {
   width: 100%;
-  height: 80vh;
+  /* height: 80vh; */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -145,7 +145,7 @@ h2:hover{
 }
 
 .movies {
-  width: 100px;
+  width: 90px;
   color: var(--light);
   margin: 1em;
 }
@@ -190,6 +190,7 @@ h2:hover{
 .details-container {
   margin: 1em 0;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   color: var(--light);
   animation: details 1s;
@@ -205,7 +206,7 @@ h2:hover{
 }
 
 .details-img-container{
-  width: 30%;
+  width: 100%;
 }
 
 .details-img-container img {
@@ -214,7 +215,7 @@ h2:hover{
 }
 
 .details-content-container {
-  width: 60%;
+  width: 100%;
 }
 
 .details-content-container span {
@@ -224,10 +225,11 @@ h2:hover{
 .footer-container {
   background: #313131;
   color:var(--light2);
-  position: fixed;
+  position: relative;
   bottom: 0%;
   left: 0%;
   width: 100%;
+  margin-top: 2em;
 }
 
 .footer-content-container {
@@ -310,7 +312,7 @@ h2:hover{
 
   .options {
     display: block;    
-    width: 30%;
+    width: 20%;
     padding-left: 1em;
   }
 
@@ -324,7 +326,7 @@ h2:hover{
   }
 
   .movie-container {
-    width: 65%;
+    width: 75%;
     overflow-y: scroll;
     height: 80vh;
     display: flex;
@@ -339,12 +341,39 @@ h2:hover{
     height: 80vh;
     overflow-y: scroll;  
   }
+
+  .details-container {
+    margin: 1em 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: var(--light);
+    animation: details 1s;
+  }
+  
+  @keyframes details {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .details-img-container{
+    width: 30%;
+  }
+  
+  .details-img-container img {
+    width: 100%;
+    border: 5px solid var(--light3);
+  }
+  
+  .details-content-container {
+    width: 60%;
+  }
   
  }
-
-/* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {  }
-
 
 
 
